@@ -27,6 +27,8 @@ public class Followerinfo {
     private String description;
     
     private List<Followerinfo> follower;
+    
+    private List<QAOnline> qaonline;
 
     public String getId() {
         return id;
@@ -122,5 +124,13 @@ public class Followerinfo {
 
 	public void setFollower(List<Followerinfo> follower) {
 		this.follower = follower;
+	}
+	
+	public List<QAOnline> getQAOnline() {
+		return qaonline;
+	}
+
+	public void setQAOnline(List<QAOnline> qaonline) {
+		this.qaonline = qaonline;
 	}
 }

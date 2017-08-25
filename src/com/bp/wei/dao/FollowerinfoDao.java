@@ -20,4 +20,10 @@ public interface FollowerinfoDao {
     int updateByPrimaryKeyWithBLOBs(Followerinfo record);
 
     int updateByPrimaryKey(Followerinfo record);
+    
+    //for get Follower id
+    Followerinfo selectFollowerInfoByKey(String wechatUserid);
+    
+    //get follower QA Online List
+    Followerinfo selectFollowerQAOnlineList(String id);
 }

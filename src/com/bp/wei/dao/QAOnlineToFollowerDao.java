@@ -14,4 +14,7 @@ public interface QAOnlineToFollowerDao {
     int updateByPrimaryKeySelective(QAOnlineToFollower record);
 
     int updateByPrimaryKey(QAOnlineToFollower record);
+    
+    //insert relation to follower
+    int insertQAOnlineToFollower(QAOnlineToFollower record);
 }

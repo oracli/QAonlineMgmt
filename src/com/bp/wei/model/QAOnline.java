@@ -19,7 +19,7 @@ public class QAOnline {
 
     private String assignedUserId;
 
-    private Date questionDt;
+    private String questionDt;
 
     private Date askDt;
 
@@ -87,11 +87,11 @@ public class QAOnline {
         this.assignedUserId = assignedUserId == null ? null : assignedUserId.trim();
     }
 
-    public Date getQuestionDt() {
+    public String getQuestionDt() {
         return questionDt;
     }
 
-    public void setQuestionDt(Date questionDt) {
+    public void setQuestionDt(String questionDt) {
         this.questionDt = questionDt;
     }
 

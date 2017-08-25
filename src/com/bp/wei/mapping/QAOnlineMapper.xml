@@ -36,6 +36,30 @@
     delete from ec1_qa_online
     where id = #{id,jdbcType=CHAR}
   </delete>
+  
+  <!-- Begin -->
+  <insert id="insertQAOnlineInfo" parameterType="com.bp.wei.model.QAOnlineWithBLOBs">
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">  
+        select uuid() from dual  
+    </selectKey>  
+    insert into ec1_qa_online (id, name, date_entered, date_modified, modified_user_id, created_by, deleted, 
+      assigned_user_id, question_dt, description
+      )
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR},now(), now(), "1", "1", "0",
+      #{assignedUserId,jdbcType=CHAR}, now(), #{description,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  
+  <select id="selectQAOnlineByKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ec1_qa_online
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <!-- end -->
+  
   <insert id="insert" parameterType="com.bp.wei.model.QAOnlineWithBLOBs">
     insert into ec1_qa_online (id, name, date_entered, 
       date_modified, modified_user_id, created_by, 

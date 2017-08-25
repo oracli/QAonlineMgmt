@@ -17,4 +17,10 @@ public interface QAOnlineDao {
     int updateByPrimaryKeyWithBLOBs(QAOnlineWithBLOBs record);
 
     int updateByPrimaryKey(QAOnline record);
+    
+    //insert QA Online Info
+    int insertQAOnlineInfo(QAOnlineWithBLOBs record);
+    
+    //select QA Online info
+    QAOnlineWithBLOBs selectQAOnlineByKey(String id);
 }
