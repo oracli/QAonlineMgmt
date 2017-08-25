@@ -28,7 +28,7 @@
 				<div class="weui-cell">
 					<div class="weui-cell__hd"><label class="weui-label">选择问题类别</label></div>
 					<div class="weui-cell__bd">
-						<select name="select_type_name" id="select_type_id" class="weui-select" style= "background:#FFFFFF;"  value = "英文学习" >
+						<select name="select_type_name" id="select_type_id" class="weui-select" style= "background:#FFFFFF;">
     						<option value="英文学习">英文学习</option>
 							<option value="营销活动">营销活动</option>
 							<option value="课程询问">课程询问</option>
@@ -46,7 +46,8 @@
 			
 			<div class="page-btn-area">
 				<a class="page-btn page-btn_primary" href="javascript:setQAOnline();">新增</a>
-				<input type="hidden" id="memberid" name="memberid1" value="1" />
+				<input type="hidden" id="openid_id" name="openid_name" value="openid-12344321" />
+				<input type="hidden" id="followid_id" name="followid_name" value="1" />
 			</div>			
 
 		</div>
@@ -57,8 +58,6 @@
 			<div class="weui-cells__title"><h4>历史提问：</h4></div>
 			<br />
 			<br />
-			
-			
 		</div>
 
 		<div class="weui-footer">
@@ -75,7 +74,18 @@
 		
 		<script type="text/javascript">
 			
+			//form 初始化
+			jQuery.getUrlParam = function (name) {
+     			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+     			var r = window.location.search.substr(1).match(reg);
+     			if (r != null) return unescape(r[2]); return null;
+			}  
 			
+			$(document).ready(function() {
+				
+				alert(document.getElementById('openid_id').value);
+				
+			});
 			
 		</script>
 	</body>
