@@ -181,7 +181,9 @@
 			
 			//form 初始化			
 			$(document).ready(function() {				
-				//alert(document.getElementById('openid_id').value);
+				//				
+				$("#openid_id").val($.getUrlParam('openid'));
+				alert(document.getElementById('openid_id').value);
 				
 				//获取Follower ID
 				getFollowerID();				
